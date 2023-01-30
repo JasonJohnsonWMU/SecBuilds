@@ -12,4 +12,4 @@ Navigate to the GVM directory and execute gvm224.sh in a bash shell.
 ## Dradis Community Edition
 Navigate to the Dradis_CE directory and execute dradisce.sh in a bash shell.
 
-At the end of the script go to http://localhost:8080 to set up your password. Then exit bash and start a new shell. Then navigate to ~/dradis-ce and start Dradis with './bin/rails server'. At that point you can navigate to http://localhost:3000 to start using Dradis.
+At the end of the script go to http://localhost:8080 to set up your password. Once that's done go back to your bash shell and press Ctrl+c to exit. Then exit bash and start a new shell. Then navigate to ~/dradis-ce and start Dradis with './bin/rails server'. At that point you can navigate to http://localhost:3000 to start using Dradis.
