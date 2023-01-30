@@ -31,8 +31,7 @@ echo 'eval "$(rbenv init - bash)"' >> ~/.bashrc
 
 # Initialize rbenv so we can use it during this session
 ~/.rbenv/bin/rbenv init
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init - bash)"
+bash -l
 
 # We'll use ruby-build to install ruby versions
 mkdir -p "$(rbenv root)"/plugins
