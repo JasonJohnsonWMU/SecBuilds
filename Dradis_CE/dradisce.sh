@@ -52,6 +52,6 @@ cd ~/dradis-ce/
 rbenv local 3.1.2
 
 # Set up Dradis
-./bin/setup
+# ./bin/setup
 
-echo "Now you can start Dradis with './bin/rails server' and navigate to http://localhost:3000 in your browser to use it."
+echo "Now you can restart bash with 'bash -l', or just exit and start a new shell, and then start Dradis with '~/dradis/bin/rails server' and navigate to http://localhost:3000 in your browser to use it."
