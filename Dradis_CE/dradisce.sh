@@ -48,10 +48,10 @@ sudo apt install -y libpq-dev libsqlite3-dev
 git clone https://github.com/dradis/dradis-ce.git
 
 # Change to the dradis-ce directory and set the appropriate ruby version
-cd dradis-ce/
+cd ~/dradis-ce/
 rbenv local 3.1.2
 
 # Set up Dradis
-# ./bin/setup
+./bin/setup
 
 echo "Now you can start Dradis with './bin/rails server' and navigate to http://localhost:3000 in your browser to use it."
