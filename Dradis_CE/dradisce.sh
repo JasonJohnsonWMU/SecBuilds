@@ -39,7 +39,7 @@ mkdir -p "$(rbenv root)"/plugins
 git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 
 # Install the ruby version required by Dradis
-rbenv install 3.1.2
+rbenv install 3.1.2 --verbose
 
 # Install required packages
 sudo apt install -y libpq-dev libsqlite3-dev
