@@ -5,11 +5,21 @@ cd ~
 sudo apt update
 sudo apt upgrade -y
 
-# Install git so we can clone repositories
-sudo apt install -y git
-
-# Install build-essential to get compilation tools
-sudo apt install -y build-essential
+# Install dependencies
+sudo apt install -y git \
+  curl \
+  autoconf \
+  bison \
+  build-essential \
+  libssl-dev \
+  libyaml-dev \
+  libreadline6-dev \
+  zlib1g-dev \
+  libncurses5-dev \
+  libffi-dev \
+  libgdbm6 \
+  libgdbm-dev \
+  libdb-dev
 
 # Intall rbenv to manage Ruby
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
