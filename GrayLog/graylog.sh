@@ -29,3 +29,8 @@ sudo systemctl start mongod
 
 #check status 
 sudo systemctl status mongod
+# The last step for MongoDB is to enable MongoDB during the operating system’s start up and verify it is running.
+sudo systemctl daemon-reload
+sudo systemctl enable mongod.service
+sudo systemctl restart mongod.service
+sudo systemctl --type=service --state=active | grep mongod
