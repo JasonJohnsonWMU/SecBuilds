@@ -51,3 +51,12 @@ EOT
 ./bin/elasticsearch
 
 sudo systemctl daemon-reload
+sudo systemctl --type=service --state=active | grep elasticsearch
+#GrayLog Installation
+
+wget https://packages.graylog2.org/repo/packages/graylog-5.0-repository_latest.deb
+sudo dpkg -i graylog-5.0-repository_latest.deb
+sudo apt-get update && sudo apt-get install graylog-server 
+
+#CHOOSE PASSWORD OR IT WILL NOT RUN
+echo -n "Enter Password: " && head -1 </dev/stdin | tr -d '\n' | sha256sum | cut -d" " -f1
