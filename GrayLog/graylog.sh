@@ -41,9 +41,13 @@ wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.10.2-l
 wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.10.2-linux-x86_64.tar.gz.sha512
 shasum -a 512 -c elasticsearch-7.10.2-linux-x86_64.tar.gz.sha512 
 tar -xzf elasticsearch-7.10.2-linux-x86_64.tar.gz
-cd elasticsearch-7.10.2
+sudo tee -a elasticsearch-7.10.2/config/elasticsearch.yml > /dev/null <<EOT
+cluster.name: graylog
+action.auto_create_index: false
+EOT
 # run 
 
 
 ./bin/elasticsearch
 
+sudo systemctl daemon-reload
