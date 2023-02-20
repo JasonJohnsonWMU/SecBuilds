@@ -35,6 +35,9 @@ sudo systemctl enable mongod.service
 sudo systemctl restart mongod.service
 sudo systemctl --type=service --state=active | grep mongod
 
+
+#OPENSEARCH
+wget --inet4-only https://artifacts.opensearch.org/releases/bundle/opensearch/2.5.0/opensearch-2.5.0-linux-x64.deb
 #download Elasticsearch
 
 wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.10.2-linux-x86_64.tar.gz
@@ -60,3 +63,24 @@ sudo apt-get update && sudo apt-get install graylog-server
 
 #CHOOSE PASSWORD OR IT WILL NOT RUN
 echo -n "Enter Password: " && head -1 </dev/stdin | tr -d '\n' | sha256sum | cut -d" " -f1
+
+
+## PERSONAL TEST
+#ELASTIC INSTALLATION 
+wget -q https://artifacts.elastic.co/GPG-KEY-elasticsearch -O myKey
+sudo apt-key add myKey
+echo "deb https://artifacts.elastic.co/packages/oss-7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
+sudo apt-get update && sudo ap-get install elasticsearch-oss
+
+#GRAYLOG INSTALLATION
+sudo apt-get install graylog-server
+
+#Graylog does NOT start automatically!
+
+#following commands to start Graylog automatically on system boot:
+sudo systemctl enable graylog-server.service
+sudo systemctl start graylog-server.service
+
+
+
+
