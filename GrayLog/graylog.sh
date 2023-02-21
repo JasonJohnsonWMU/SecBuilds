@@ -85,6 +85,9 @@ sudo systemctl start graylog-server.service
 sed i- 's/my-application/graylog/g' elasticsearch-7.10.2/config/elasticsearch.yml
 echo "action.auto_create_index: false" elasticsearch-7.10.2/config/elasticsearch.yml
 
+sudo apt-get update
+#THIS STEP NEED TO BE REVIEWD <<>>
+echo -n "Enter Password: " && head -1 </dev/stdin | tr -d '\n' | sha256sum | cut -d" " -f1
 
 
 
