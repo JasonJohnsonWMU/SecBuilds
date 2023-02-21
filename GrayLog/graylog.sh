@@ -81,6 +81,11 @@ sudo apt-get install graylog-server
 sudo systemctl enable graylog-server.service
 sudo systemctl start graylog-server.service
 
+# change the cluster name using sed
+sed i- 's/my-application/graylog/g' elasticsearch-7.10.2/config/elasticsearch.yml
+echo "action.auto_create_index: false" elasticsearch-7.10.2/config/elasticsearch.yml
+
+
 
 
 
