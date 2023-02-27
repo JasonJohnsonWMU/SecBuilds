@@ -103,6 +103,9 @@ sudo systemctl restart mongod.service
 #There is a problem with elasticsearch-server file, cant found -- > to be reviwed
 
 
-
+# 1- Fix elasticsearch-server file
+# 2- Generate SHA256 Key and insert it automatcilly to graylog server file
+# 3- change to local host ip 
+# 4 - test
 
 
