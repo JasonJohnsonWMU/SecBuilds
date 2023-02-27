@@ -100,6 +100,8 @@ sudo systemctl daemon-reload
 sudo systemctl enable mongod.service
 sudo systemctl restart mongod.service
 
+#There is a problem with elasticsearch-server file, cant found -- > to be reviwed
+
 
 
 
