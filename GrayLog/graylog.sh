@@ -91,6 +91,15 @@ echo -n "Enter Password: " && head -1 </dev/stdin | tr -d '\n' | sha256sum | cut
 
 echo "http_bind_address = 10.0.100.20:9000" /etc/graylog/server/server.conf
 
+cd /etc/default 
+sudo sed -i 's/Xms1g/Xms2g/g' graylog-server
+sudo sed -i 's/Xmx1g/Xmx2g/g' graylog-server
+cd
+
+sudo systemctl daemon-reload
+sudo systemctl enable mongod.service
+sudo systemctl restart mongod.service
+
 
 
 
