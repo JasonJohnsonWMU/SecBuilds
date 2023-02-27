@@ -89,6 +89,9 @@ sudo apt-get update
 #THIS STEP NEED TO BE REVIEWD <<>>
 echo -n "Enter Password: " && head -1 </dev/stdin | tr -d '\n' | sha256sum | cut -d" " -f1
 
+echo "http_bind_address = 10.0.100.20:9000" /etc/graylog/server/server.conf
+
+
 
 
 
