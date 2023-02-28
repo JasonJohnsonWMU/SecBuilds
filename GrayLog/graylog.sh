@@ -109,3 +109,32 @@ sudo systemctl restart mongod.service
 # 4 - test
 
 
+
+#After Making the installation easier
+
+#Install MongoDB 6.0
+wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
+
+#Create MongoListFile 
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ ubuntu jammy/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+
+#Reload and Start MongoDb
+
+sudo apt-get update
+sudo apt-get install -y mongodb-org
+sudo systemctl daemon-reload
+sudo systemctl enable mongod.service
+sudo systemctl start mongod
+
+#Install opensearch 
+
+ wget --inet4-only https://artifacts.opensearch.org/releases/bundle/opensearch/2.5.0/opensearch-2.5.0-linux-x64.deb
+sudo dpkg -i opensearch-2.5.0-linux-x64.deb
+sudo sed -i 's/#cluster.name: my-application/cluster.name: graylog/g' /etc/opensearch/opensearch.yml
+sudo sed -i 's/#network.host: 192.168.0.1/network.host: 0.0.0.0/g' /etc/opensearch/opensearch.yml
+
+sudo sed -i '70i discovery.type: single-node' /etc/opensearch/opensearch.yml
+
+sudo sed -i -e '$action.auto_create_index: false' /etc/opensearch/opensearch.yml
+
+
