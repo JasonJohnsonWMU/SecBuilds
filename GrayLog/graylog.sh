@@ -116,12 +116,12 @@ sudo systemctl restart mongod.service
 wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
 
 #Create MongoListFile 
-echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ ubuntu jammy/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
 
 #Reload and Start MongoDb
 
 sudo apt-get update
-sudo apt-get install -y mongodb-org
+sudo apt install mongodb-org
 sudo systemctl daemon-reload
 sudo systemctl enable mongod.service
 sudo systemctl start mongod
