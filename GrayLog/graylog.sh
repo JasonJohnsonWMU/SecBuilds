@@ -145,7 +145,11 @@ sudo dpkg -i graylog-5.0-repository_latest.deb
 sudo apt update 
 sudo apt install graylog-enterprise
 sudo apt install pwgen
+sudo sed -i 's/password_secret =/password_secret = 3Smj651bunEPSSaA9FQ67aAeNkQVMClm2VEvZZCugzhC5R8cr5SynPQzaqGgltMDd0jyH5ZGky9wpoGQJ4J8JSCA8eqtw2IG/g' /etc/graylog/server/server.conf
+sudo sed -i 's/root_password_sha2 =/root_password_sha2 = 8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918/g' /etc/graylog/server/server.conf
 
-
+sudo systemctl daemon-reload
+sudo systemctl enable graylog-server.service
+sudo systemctl start graylog-server.service
 
 
