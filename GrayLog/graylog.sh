@@ -140,6 +140,12 @@ sudo sed -i -e '$action.auto_create_index: false' /etc/opensearch/opensearch.yml
 sudo systemctl daemon-reload
 sudo systemctl enable opensearch.service
 sudo systemctl start opensearch
+wget --inet4-only https://packages.graylog2.org/repo/packages/graylog-5.0-repository_latest.deb
+sudo dpkg -i graylog-5.0-repository_latest.deb
+sudo apt update 
+sudo apt install graylog-enterprise
+sudo apt install pwgen
+
 
 
 
