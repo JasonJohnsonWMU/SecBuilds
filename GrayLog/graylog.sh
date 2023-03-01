@@ -137,4 +137,6 @@ sudo sed -i '70i discovery.type: single-node' /etc/opensearch/opensearch.yml
 
 sudo sed -i -e '$action.auto_create_index: false' /etc/opensearch/opensearch.yml
 
+sudo systemctl deamon-reload
+
 
