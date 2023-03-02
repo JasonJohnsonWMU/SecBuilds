@@ -1,5 +1,5 @@
 
-# We'll install Greenbone in our home directory, so make sure we're in our home directory and update and upgrade
+# We'll install GrayLog in our home directory, so make sure we're in our home directory and update and upgrade
 cd ~
 sudo apt update
 sudo apt upgrade -y
