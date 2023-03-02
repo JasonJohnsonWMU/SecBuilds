@@ -153,3 +153,8 @@ sudo systemctl enable graylog-server.service
 sudo systemctl start graylog-server.service
 
 
+#Error with opensearch after the installation 
+# sudo systemctl status graylog-server 
+# this command to check the status and trace the error
+
+
