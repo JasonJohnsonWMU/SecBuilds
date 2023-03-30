@@ -29,6 +29,8 @@ sudo chmod -R g+x conf
 sudo chown -R tomcat webapps/ work/ temp/ logs/
 #Create tomcat service file in the /etc/ systemd/ system/ directory
 
-cd ../../etc/systemd
+cd ../../etc/systemd/system
+sudo wget https://github.com/JasonJohnsonWMU/SecBuilds/blob/main/WebGoat/tomcat.service
+sudo systemctl daemon-reload
 
 
