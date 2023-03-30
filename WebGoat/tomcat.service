@@ -5,8 +5,8 @@ After=network.target
 [Service]
 Type=forking
 
-Environment=CATALINA_PID=/opt/tomcat/tomcat9.pid
-Environment=JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
+Environment=CATALINA_PID=/opt/tomcat/temp/tomcat.pid
+Environment=JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre
 Environment=CATALINA_HOME=/opt/tomcat
 Environment=CATALINA_BASE=/opt/tomcat
 Environment="CATALINA_OPTS=-Xms512m -Xmx512m"    # optional
@@ -14,5 +14,12 @@ Environment="JAVA_OPTS=-Dfile.encoding=UTF-8"    # optional
 ExecStart=/opt/tomcat/bin/startup.sh
 ExecStop=/opt/tomcat/bin/shutdown.sh
 
+User=tomcat
+Group=tomcat
+UMask=0007
+RestartSec=10
+Restart=always
+
+
 [Install]
-WantedBy=multi-user.targett
+WantedBy=multi-user.target
