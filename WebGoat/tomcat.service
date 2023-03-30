@@ -23,4 +23,4 @@ Restart=always
 
 [Install]
 
-WantedBy=multi-userz.target
+WantedBy=multi-user.target
