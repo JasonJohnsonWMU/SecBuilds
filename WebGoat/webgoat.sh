@@ -54,3 +54,19 @@ sudo apt-get update
 
 #Install docker engine
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+
+# Third Approach 
+#Download JDK 11
+wget https://download.java.net/java/ga/jdk11/openjdk-11_linux-x64_bin.tar.gz
+#acting as root
+#create JVM Direcotry 
+sudo mkdir /usr/lib/jvm
+
+#extract JVM
+sudo tar xzvf openjdk-11_linux-x64_bin.tar.gz --directory /usr/lib/jvm
+
+#Link Java
+sudo ln -s /usr/lib/jvm/jdk-11/bin/java /usr/bin/java
+
+
